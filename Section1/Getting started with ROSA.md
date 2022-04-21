@@ -73,7 +73,7 @@ If you'd like an easy to follow guide for creating your first ROSA cluster:
 
   Run the following command to query the AWS API
   
-    ```aws sts get-caller-identity```
+    ```$ aws sts get-caller-identity```
     
   You should see a table (or JSON if that’s what you set it to above) like the below. Verify that the account information is correct.
         
@@ -85,3 +85,29 @@ If you'd like an easy to follow guide for creating your first ROSA cluster:
         +--------------+----------------------------------------+--------------------+
         |  000000000000|  arn:aws:iam::00000000000:user/myuser  |  AIDA00000000000000|
         +--------------+----------------------------------------+--------------------+
+   
+   Ensure the ELB service role exists#
+
+   Make sure that the service role for ELB already exists, otherwise the cluster deployment could fail. As such, run the following to check for the role and create it if it is missing.
+
+    ```
+    aws iam get-role --role-name "AWSServiceRoleForElasticLoadBalancing" || aws iam create-service-linked-role --aws-service-name "elasticloadbalancing.amazonaws.com" 
+    ```
+
+  If you received an error during cluster creation like below, then the above should correct it.
+
+    ```
+    Error: Error creating network Load Balancer: AccessDenied: User: arn:aws:sts::970xxxxxxxxx:assumed-role/ManagedOpenShift-Installer-Role/163xxxxxxxxxxxxxxxx is not authorized to perform: iam:CreateServiceLinkedRole on resource: arn:aws:iam::970xxxxxxxxx:role/aws-service-role/elasticloadbalancing.amazonaws.com/AWSServiceRoleForElasticLoadBalancing" 
+    ```
+
+*  Log into your Red Hat account#
+
+      a. Enter rosa login in a terminal.
+      
+      b. It will prompt you to open a web browser and go to: https://console.redhat.com/openshift/token/rosa
+      
+      c. If you are asked to log in, then please do.
+      
+      d. Click on the "Load token" button.
+      
+      e. Copy the token and paste it back into the CLI prompt and press enter.Alternatively, you can just copy the full ```rosa login --token=abc... ```command and paste that in the terminal.
