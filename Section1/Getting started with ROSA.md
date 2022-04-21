@@ -130,18 +130,4 @@ If you'd like an easy to follow guide for creating your first ROSA cluster:
     OCM Organization ID:          1HopHfA20000000000000000000
     OCM Organization Name:        Red Hat
     OCM Organization External ID: 0000000
-```
-Please check all information for accuracy before proceeding.
-
-  2. Verify quota
-
-  Verify that your AWS account has ample quota in the region you will be deploying your cluster to. Run the following:
-
-  ```rosa verify quota```
-  
-  Should return a response like
-
-  ```
-  I: Validating AWS quota...
-  I: AWS quota ok. If cluster installation fails, validate actual AWS resource usage against https://docs.openshift.com/rosa/rosa_getting_started/rosa-required-aws-service-quotas.html
-  ```
+ ```
