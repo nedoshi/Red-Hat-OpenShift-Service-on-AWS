@@ -111,3 +111,37 @@ If you'd like an easy to follow guide for creating your first ROSA cluster:
       d. Click on the "Load token" button.
       
       e. Copy the token and paste it back into the CLI prompt and press enter.Alternatively, you can just copy the full ```rosa login --token=abc... ```command and paste that in the terminal.
+* Verify credentials#
+
+  1. Verify that all the credentials set up are correctly.
+
+  Run ```rosa whoami```
+
+  You should see an output like below:
+  ```
+    AWS Account ID:               000000000000
+    AWS Default Region:           us-east-2
+    AWS ARN:                      arn:aws:iam::000000000000:user/myuser
+    OCM API:                      https://api.openshift.com
+    OCM Account ID:               1DzGIdIhqEWy000000000000000
+    OCM Account Name:             Your Name
+    OCM Account Username:         you@domain.com
+    OCM Account Email:            you@domain.com
+    OCM Organization ID:          1HopHfA20000000000000000000
+    OCM Organization Name:        Red Hat
+    OCM Organization External ID: 0000000
+```
+Please check all information for accuracy before proceeding.
+
+  2. Verify quota
+
+  Verify that your AWS account has ample quota in the region you will be deploying your cluster to. Run the following:
+
+  ```rosa verify quota```
+  
+  Should return a response like
+
+  ```
+  I: Validating AWS quota...
+  I: AWS quota ok. If cluster installation fails, validate actual AWS resource usage against https://docs.openshift.com/rosa/rosa_getting_started/rosa-required-aws-service-quotas.html
+  ```
