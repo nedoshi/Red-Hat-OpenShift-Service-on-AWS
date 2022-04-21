@@ -111,5 +111,3 @@ If you'd like an easy to follow guide for creating your first ROSA cluster:
       d. Click on the "Load token" button.
       
       e. Copy the token and paste it back into the CLI prompt and press enter.Alternatively, you can just copy the full ```rosa login --token=abc... ```command and paste that in the terminal.
-
-Insert
