@@ -67,7 +67,7 @@ If you'd like an easy to follow guide for creating your first ROSA cluster:
         Default region name: us-east-1
         Default output format: table
         
-* Verify the configuration#
+* Verify the configuration
 
   Verify that the configuration is correct.
 
@@ -76,3 +76,12 @@ If you'd like an easy to follow guide for creating your first ROSA cluster:
     ```aws sts get-caller-identity```
     
   You should see a table (or JSON if that’s what you set it to above) like the below. Verify that the account information is correct.
+        
+        $ aws sts get-caller-identity
+        ------------------------------------------------------------------------------
+        |                                GetCallerIdentity                           |
+        +--------------+----------------------------------------+--------------------+
+        |    Account   |                   Arn                  |        UserId      |
+        +--------------+----------------------------------------+--------------------+
+        |  000000000000|  arn:aws:iam::00000000000:user/myuser  |  AIDA00000000000000|
+        +--------------+----------------------------------------+--------------------+
