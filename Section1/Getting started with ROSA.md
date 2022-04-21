@@ -1,6 +1,8 @@
 # Getting started with ROSA
 **Creating your first ROSA Cluster**
 
+AWS Secure Token Service (STS) Method
+
 If you'd like an easy to follow guide for creating your first ROSA cluster:
 
 1. Please review the [prerequisites](https://github.com/nedoshi/Red-Hat-OpenShift-Service-on-AWS/blob/main/prerequisites.md) which contains important information about the AWS account requirements.You will need the following pieces of information from your AWS account:
