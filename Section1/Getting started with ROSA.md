@@ -42,3 +42,37 @@ If you'd like an easy to follow guide for creating your first ROSA cluster:
           - Once downloaded, untar (or unzip) the file and move the executables into a directory in your PATH
 
     b. Or, you can [download and install](https://docs.openshift.com/container-platform/4.9/cli_reference/openshift_cli/getting-started-cli.html#installing-openshift-cli) the latest OpenShift CLI (oc)
+
+* Configure the AWS CLI#
+
+  If you've just installed the AWS CLI, or simply want to make sure it is using the correct AWS account, follow these steps in a terminal:
+  
+    a. Enter aws configure in the terminal
+    
+    b. Enter the AWS Access Key ID and press enter
+    
+    c. Enter the AWS Secret Access Key and press enter
+    
+    d. Enter the default region you want to deploy into
+    
+    e. Enter the output format you want (“table” or “json”). 
+    For this guide you can choose “table” as it is easier to read but either is fine.
+    
+    It should look like the following as an example:
+    
+    ```$ aws configure```
+    
+        AWS Access Key ID: AKIA0000000000000000
+        AWS Secret Access Key: NGvmP0000000000000000000000000
+        Default region name: us-east-1
+        Default output format: table
+        
+* Verify the configuration#
+
+  Verify that the configuration is correct.
+
+  Run the following command to query the AWS API
+  
+    ```aws sts get-caller-identity```
+    
+  You should see a table (or JSON if that’s what you set it to above) like the below. Verify that the account information is correct.
