@@ -1,8 +1,9 @@
 # Getting started with ROSA
-**Creating your first ROSA Cluster**
+
+
 Console: https://auth.redhat.com/auth/realms/EmployeeIDP/protocol/saml/clients/itaws
 
-AWS Secure Token Service (STS) Method
+## Creating your first ROSA Cluster - AWS Secure Token Service (STS) Method
 
 If you'd like an easy to follow guide for creating your first ROSA cluster:
 
